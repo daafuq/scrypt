@@ -66,6 +66,11 @@ struct scryptenc_params {
 	size_t maxmem;
 	double maxmemfrac;
 	double maxtime;
+
+	/* Precise parameters. */
+	int logN;
+	uint32_t r;
+	uint32_t p;
 };
 
 /* Return codes from scrypt(enc|dec)_(buf|file|prep). */
