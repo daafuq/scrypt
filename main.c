@@ -160,6 +160,24 @@ main(int argc, char *argv[])
 		GETOPT_OPT("-f"):
 			force_resources = 1;
 			break;
+		GETOPT_OPTARG("-l"):
+			if (PARSENUM(&params.logN, optarg, 10, 2048)) {
+				warnp("Invalid option: %s %s", ch, optarg);
+				exit(1);
+			}
+			break;
+		GETOPT_OPTARG("-r"):
+			if (PARSENUM(&params.r, optarg, 1, 128)) {
+				warnp("Invalid option: %s %s", ch, optarg);
+				exit(1);
+			}
+			break;
+		GETOPT_OPTARG("-p"):
+			if (PARSENUM(&params.p, optarg, 1, 128)) {
+				warnp("Invalid option: %s %s", ch, optarg);
+				exit(1);
+			}
+			break;
 		GETOPT_OPTARG("-M"):
 			if (humansize_parse(optarg, &maxmem64)) {
 				warn0("Could not parse the parameter to -M.");
