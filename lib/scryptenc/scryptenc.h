@@ -88,6 +88,7 @@ struct scryptenc_params {
 #define SCRYPT_EPASS	11	/* password is incorrect */
 #define SCRYPT_EWRFILE	12	/* error writing output file */
 #define SCRYPT_ERDFILE	13	/* error reading input file */
+#define SCRYPT_EPARAM	14	/* problem with a manually specified param */
 
 /* Opaque structure. */
 struct scryptdec_file_cookie;
